@@ -1,0 +1,2 @@
+D:\GitHub\LMC\LMCWeb\obj\Debug\LMCWeb.njsprojResolveAssemblyReference.cache
+D:\GitHub\LMC\LMCWeb\bin\Microsoft.NodejsTools.WebRole.dll

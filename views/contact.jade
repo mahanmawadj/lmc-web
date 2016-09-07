@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  h1 #{title}
+  legend Mailing Address:
+  address
+    | #{address1}
+    br
+    | #{address2}
+    br
+    | #{address3}
+    br
+    br
+    legend Email Us:
+    .container
+      form(name='contactForm', ng-class="{ 'hidden': submit }")
+        fieldset
+          label(for='email', ng-class="{'required':contactForm.email.$error.required,'invalid':contactForm.email.$error.email,'ok':contactForm.email.$valid}")
+            span.no-placeholder
+              | Email
+            input#email(name='email', ng-model='email', placeholder='Email', required='', type='email')
+          label(for='subject', ng-class="{'required':contactForm.subject.$error.required,'ok':contactForm.subject.$valid}")
+            span.no-placeholder
+              | Subject
+            input#subject(name='subject', ng-model='subject', placeholder='Subject', required='', type='text')
+          label(for='message', ng-class="{'required':contactForm.message.$error.required,'ok':contactForm.message.$valid}")
+            span.no-placeholder
+              | Message
+            textarea(name='message', ng-model='message', placeholder='Message', required='')
+        .form-controls
+          button.btn.btn-send(ng-click='submit = ! submit', ng-disabled='contactForm.$invalid', type='submit')
+            | Send
