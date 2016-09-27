@@ -1,4 +1,5 @@
 /// <reference path="globals/angular-route/index.d.ts" />
+/// <reference path="globals/angular/index.d.ts" />
 /// <reference path="globals/body-parser/index.d.ts" />
 /// <reference path="globals/cookie-parser/index.d.ts" />
 /// <reference path="globals/debug/index.d.ts" />
