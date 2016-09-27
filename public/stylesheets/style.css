@@ -301,15 +301,33 @@ hr {
 --- Intro
 ============================ */
 
+.results {
+	width:100%;
+    height:100%;
+	position:absolute;
+	background: url(../img/dirt-171155_1920.jpg) no-repeat top center;
+}
+
+#results.results {
+	padding:8% 0 0 0;
+
+}
+
+.results .slogan {
+	text-align: center;
+
+}
+
 .intro {
 	width:100%;
-	position:relative;
-	
+    height:100%;
+	position:absolute;
 	background: url(../img/dirt-171155_1920.jpg) no-repeat top center;
 }
 
 #intro.intro {
 	padding:20% 0 0 0;
+
 }
 
 .intro .slogan {
@@ -442,9 +460,9 @@ hr {
 }
 
 #contact {
+	position:absolute;
 	width:100%;
-	position:relative;
-	
+    height:100%;
 	background: url(../img/dirt-bike-1209713_1920.jpg) no-repeat top center;
 }
 
