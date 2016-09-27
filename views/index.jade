@@ -1,194 +1,67 @@
-﻿extends layout
-
-block content
-    section#intro.intro
-      .slogan
-        h2
-          | WELCOME TO 
-          span.text_color LMC
-        h4 Home of the historic Jack Pine enduro.
-      .page-scroll
-        a.btn.btn-circle(href='#service')
-          i.fa.fa-angle-double-down.animated
-    // /Section: intro
-    // Section: about
-    section#about.home-section.text-center
-      .heading-about
-        .container
-          .row
-            .col-lg-8.col-lg-offset-2
-              .wow.bounceInDown(data-wow-delay='0.4s')
-                .section-heading
-                  h2 About us
-                  i.fa.fa-2x.fa-angle-down
+﻿doctype html
+html(ng-app="myApp")
+  head
+    meta(charset='utf-8')
+    base(href='/')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Lansing Motorcycle Club
+    // Bootstrap Core CSS
+    link(href='stylesheets/bootstrap.min.css', rel='stylesheet', type='text/css')
+    // Fonts
+    link(href='font-awesome/css/font-awesome.min.css', rel='stylesheet', type='text/css')
+    link(href='stylesheets/animate.css', rel='stylesheet')
+    // Squad theme CSS
+    link(href='stylesheets/style.css', rel='stylesheet')
+    link(href='color/default.css', rel='stylesheet')
+  body#page-top(data-spy='scroll', data-target='.navbar-custom')
+    // Preloader
+    #preloader
+      #load
+    nav.navbar.navbar-custom.navbar-fixed-top(role='navigation')
       .container
-        .row
-          .col-lg-2.col-lg-offset-5
-            hr.marginbot-50
-        .row
-          .col-xs-6.col-sm-3.col-md-3
-            .wow.bounceInUp(data-wow-delay='0.2s')
-              .team.boxed-grey
-                .inner
-                  h5 Anna Hanaceck
-                  p.subtitle Pixel Crafter
-                  .avatar
-                    img.img-responsive.img-circle(src='img/team/1.jpg', alt='')
-          .col-xs-6.col-sm-3.col-md-3
-            .wow.bounceInUp(data-wow-delay='0.5s')
-              .team.boxed-grey
-                .inner
-                  h5 Maura Daniels
-                  p.subtitle Ruby on Rails
-                  .avatar
-                    img.img-responsive.img-circle(src='img/team/2.jpg', alt='')
-          .col-xs-6.col-sm-3.col-md-3
-            .wow.bounceInUp(data-wow-delay='0.8s')
-              .team.boxed-grey
-                .inner
-                  h5 Jack Briane
-                  p.subtitle jQuery Ninja
-                  .avatar
-                    img.img-responsive.img-circle(src='img/team/3.jpg', alt='')
-          .col-xs-6.col-sm-3.col-md-3
-            .wow.bounceInUp(data-wow-delay='1s')
-              .team.boxed-grey
-                .inner
-                  h5 Tom Petterson
-                  p.subtitle Typographer
-                  .avatar
-                    img.img-responsive.img-circle(src='img/team/4.jpg', alt='')
-    // /Section: about
-    // Section: services
-    section#service.home-section.text-center.bg-gray
-      .heading-about
-        .container
-          .row
-            .col-lg-8.col-lg-offset-2
-              .wow.bounceInDown(data-wow-delay='0.4s')
-                .section-heading
-                  h2 Our Services
-                  i.fa.fa-2x.fa-angle-down
-      .container
-        .row
-          .col-lg-2.col-lg-offset-5
-            hr.marginbot-50
-        .row
-          .col-sm-3.col-md-3
-            .wow.fadeInLeft(data-wow-delay='0.2s')
-              .service-box
-                .service-icon
-                  img(src='img/icons/service-icon-1.png', alt='')
-                .service-desc
-                  h5 Print
-                  p
-                    | Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.
-          .col-sm-3.col-md-3
-            .wow.fadeInUp(data-wow-delay='0.2s')
-              .service-box
-                .service-icon
-                  img(src='img/icons/service-icon-2.png', alt='')
-                .service-desc
-                  h5 Web Design
-                  p
-                    | Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.
-          .col-sm-3.col-md-3
-            .wow.fadeInUp(data-wow-delay='0.2s')
-              .service-box
-                .service-icon
-                  img(src='img/icons/service-icon-3.png', alt='')
-                .service-desc
-                  h5 Photography
-                  p
-                    | Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.
-          .col-sm-3.col-md-3
-            .wow.fadeInRight(data-wow-delay='0.2s')
-              .service-box
-                .service-icon
-                  img(src='img/icons/service-icon-4.png', alt='')
-                .service-desc
-                  h5 Cloud System
-                  p
-                    | Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.
-    // /Section: services
-    // Section: contact
-    section#contact.home-section.text-center
-      .heading-contact
-        .container
-          .row
-            .col-lg-8.col-lg-offset-2
-              .wow.bounceInDown(data-wow-delay='0.4s')
-                .section-heading
-                  h2 Get in touch
-                  i.fa.fa-2x.fa-angle-down
-      .container
-        .row
-          .col-lg-2.col-lg-offset-5
-            hr.marginbot-50
-        .row
-          .col-lg-8
-            .boxed-grey
-              form#contact-form
-                .row
-                  .col-md-6
-                    .form-group
-                      label(for='name')
-                        | Name
-                      input#name.form-control(type='text', placeholder='Enter name', required='required')
-                    .form-group
-                      label(for='email')
-                        | Email Address
-                      .input-group
-                        span.input-group-addon
-                          span.glyphicon.glyphicon-envelope
-                        input#email.form-control(type='email', placeholder='Enter email', required='required')
-                    .form-group
-                      label(for='subject')
-                        | Subject
-                      select#subject.form-control(name='subject', required='required')
-                        option(value='na', selected='') Choose One:
-                        option(value='service') General Customer Service
-                        option(value='suggestions') Suggestions
-                        option(value='product') Product Support
-                  .col-md-6
-                    .form-group
-                      label(for='name')
-                        | Message
-                      textarea#message.form-control(name='message', rows='9', cols='25', required='required', placeholder='Message')
-                  .col-md-12
-                    button#btnContactUs.btn.btn-skin.pull-right(type='submit')
-                      | Send Message
-          .col-lg-4
-            .widget-contact
-              h5 Main Office
-              address
-                strong Squas Design, Inc.
-                br
-                | 				  Tower 795 Folsom Ave, Beautiful Suite 600
-                br
-                | 				  San Francisco, CA 94107
-                br
-                abbr(title='Phone') P:
-                |  (123) 456-7890
-              address
-                strong Email
-                br
-                a(href='mailto:#') email.name@example.com
-              address
-                strong We're on social networks
-                br
-                ul.company-social
-                  li.social-facebook
-                    a(href='#', target='_blank')
-                      i.fa.fa-facebook
-                  li.social-twitter
-                    a(href='#', target='_blank')
-                      i.fa.fa-twitter
-                  li.social-dribble
-                    a(href='#', target='_blank')
-                      i.fa.fa-dribbble
-                  li.social-google
-                    a(href='#', target='_blank')
-                      i.fa.fa-google-plus
-    // /Section: contact
-
+        .navbar-header.page-scroll
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-main-collapse')
+            i.fa.fa-bars
+          a.navbar-brand(href='/')
+            h1 LANSING MOTORCYCLE CLUB
+        // Collect the nav links, forms, and other content for toggling
+        .collapse.navbar-collapse.navbar-right.navbar-main-collapse
+          ul.nav.navbar-nav
+            li.active
+              a(href='/') Home
+            li
+              a(href='/results') Results
+            li
+              a(href='/events') Events
+            li
+              a(href='/contact') Contact
+        // /.navbar-collapse
+      // /.container
+    // Section: intro
+    block content
+    div(ng-view)
+    footer
+            p
+              | ©Copyright 2014 - Squad. All rights reserved. 
+              a(href='http://bootstraptaste.com/') Bootstrap Themes
+              |  by BootstrapTaste
+            //
+              All links in the footer should remain intact.
+              Licenseing information is available at: http://bootstraptaste.com/license/
+              You can buy this theme without footer links online at: http://bootstraptaste.com/buy/?theme=Squadfree
+    // Core JavaScript Files
+    script(src='javascripts/jquery.min.js')
+    script(src='javascripts/bootstrap.min.js')
+    script(src='javascripts/jquery.easing.min.js')
+    script(src='javascripts/jquery.scrollTo.js')
+    script(src='javascripts/wow.min.js')
+    // Custom Theme JavaScript
+    script(src='javascripts/custom.js')
+    script(src='javascripts/angular/angular.js')
+    script(src='javascripts/app.js')
+    script(src='javascripts/services.js')
+    script(src='javascripts/controllers.js')
+    script(src='javascripts/filters.js')
+    script(src='javascripts/directives.js')

@@ -4,16 +4,20 @@
  */
 
 var express = require('express');
+var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
+var errorHandler = require('error-handler');
+var logger = require('morgan');
 var path = require('path');
 var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
 
-var routes = require('./routes/index');
-var events = require('./routes/events');
-var contact = require('./routes/contact');
-var results = require('./routes/results');
+var cookieParser = require('cookie-parser');
+
+var routes = require('./routes');
+//var routes = require('./routes/index');
+//var events = require('./routes/events');
+//var contact = require('./routes/contact');
+//var results = require('./routes/results');
 
 var app = express();
 
@@ -30,18 +34,18 @@ app.use(cookieParser());
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/events', events);
-app.use('/contact', contact);
-app.use('/results', results);
+//app.use('/', routes);
+//app.use('/events', events);
+//app.use('/contact', contact);
+//app.use('/results', results);
 
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
-});
+//app.use(function (req, res, next) {
+//    var err = new Error('Not Found');
+//    err.status = 404;
+//    next(err);
+//});
 
 // error handlers
 
@@ -66,6 +70,20 @@ app.use(function (err, req, res, next) {
         error: {}
     });
 });
+
+/**
+ * Routes
+ */
+
+// serve index and view partials
+app.get('/', routes.index);
+app.get('/partials/:name', routes.partials);
+
+// JSON API
+// app.get('/api/name', api.name);
+
+// redirect all others to the index (HTML5 history)
+app.get('*', routes.index);
 
 app.set('port', process.env.PORT || 80);
 
