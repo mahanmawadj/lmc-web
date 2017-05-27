@@ -155,13 +155,13 @@
     <Content Include="public\stylesheets\bootstrap.min.css" />
     <Content Include="obj\style.styl" />
     <Content Include="README.md" />
-    <Content Include="views\index.jade" />
-    <Content Include="views\partials\contact.jade" />
-    <Content Include="views\partials\results.jade" />
-    <Content Include="views\partials\events.jade" />
-    <Content Include="views\error.jade" />
-    <Content Include="views\partials\index.jade" />
-    <Content Include="views\messages.jade" />
+    <Content Include="views\index.pug" />
+    <Content Include="views\partials\contact.pug" />
+    <Content Include="views\partials\results.pug" />
+    <Content Include="views\partials\events.pug" />
+    <Content Include="views\error.pug" />
+    <Content Include="views\partials\index.pug" />
+    <Content Include="views\messages.pug" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
